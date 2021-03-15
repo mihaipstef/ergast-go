@@ -5,6 +5,11 @@ import (
     "github.com/mihaipstef/ergast-go/helpers/request"
 )
 
+const (
+    JSON request.ResponseContentType = request.JSON
+    XML = request.XML
+)
+
 func Limit(limit int) (request.FilterFunc) {
     return func () (string, string, request.FilterType) {
         return "limit", strconv.Itoa(limit), request.PARAMETER
